@@ -6,7 +6,6 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
-
   end
 
   def create #create new place
@@ -15,6 +14,7 @@ class PlacesController < ApplicationController
   end
 
   def edit #render form to edit place
+    @place = Place.find(params[:id])
   end
 
   def show #show single place with details
@@ -22,8 +22,12 @@ class PlacesController < ApplicationController
   end
 
   def update #update place
+    @place = Place.find(params[:id])
+    @place.update(name: params[:name], memory: params[:memory])
+    redirect_to place_path(@place)
   end
 
   def destroy #delete place
   end
+
 end

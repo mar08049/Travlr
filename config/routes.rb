@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
 
 
-  resources :places, only: [:index, :show, :new, :create]
+  resources :places, only: [:index, :show, :new, :create, :edit, :update]
 
 end
