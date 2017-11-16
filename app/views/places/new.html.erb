@@ -1,0 +1,12 @@
+<%= form_tag places_path do %>
+  <label>Place name:</label><br>
+  <%= text_field_tag :'place[name]' %><br>
+
+  <label>Memory:</label><br>
+  <%= text_field_tag :'place[memory]' %><br>
+
+  <% submit_tag "Submit" %>
+<% end %>
+
+
+<%= params.inspect %>
