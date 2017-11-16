@@ -1,17 +1,23 @@
 class PlacesController < ApplicationController::Base
 
-  def index
+  def index #show all user's places
   end
 
-  def create
+  def create #create new place
   end
 
-  def show
+  def new #render form for new place
   end
 
-  def edit
+  def edit #render form to edit place
   end
 
-  def delete
+  def show #show single place with details
+  end
+
+  def update #update place
+  end
+
+  def destroy #delete place
   end
 end

@@ -1,19 +1,15 @@
 class UsersController < ApplicationController::Base
 
-  def index
+  def index #all users
   end
 
-  def create
+  def create #create user
   end
 
-  def show
+  def new #render form
   end
 
-  def edit
+  def show #show
   end
-
-  def delete
-  end
-
 
 end
