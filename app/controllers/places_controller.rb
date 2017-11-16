@@ -9,8 +9,13 @@ class PlacesController < ApplicationController
   end
 
   def create #create new place
-    Place.create(name: params[:place][:name], memory: params[:place][:memory])
-    redirect_to places_path(@place)
+    @place = Place.new(place_params)
+    if @place.valid?
+      @place.save
+      redirect_to place_path(@place)
+    else
+      render :new
+    end
   end
 
   def edit #render form to edit place
@@ -28,6 +33,12 @@ class PlacesController < ApplicationController
   end
 
   def destroy #delete place
+  end
+
+  private
+
+  def place_params
+    params.require(:place).permit(:name, :memory)
   end
 
 end
