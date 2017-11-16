@@ -1,3 +1,3 @@
-class TripsController < ApplicationController::Base
+class TripsController < ApplicationController
 
 end

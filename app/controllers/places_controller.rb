@@ -1,15 +1,17 @@
-class PlacesController < ApplicationController::Base
+class PlacesController < ApplicationController
 
   def index #show all user's places
-    @places = @user.place.all  #??
+    @places = Place.all
+  end
+
+  def new
+    @place = Place.new
+
   end
 
   def create #create new place
     Place.create(name: params[:place][:name], memory: params[:place][:memory])
-    redirect_to places_path
-  end
-
-  def new #render form for new place
+    redirect_to places_path(@place)
   end
 
   def edit #render form to edit place
