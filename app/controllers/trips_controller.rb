@@ -1,7 +1,11 @@
 class TripsController < ApplicationController
 
   def index
-    @trips = Trip.all
+    if params[:user_id]
+      @trips = User.find(params[:author_id]).trips
+    else
+      @trips = Trip.all
+    end
   end
 
   def create
@@ -14,7 +18,7 @@ class TripsController < ApplicationController
   end
 
   def show
-
+    @trip = Trip.find(params[:id])
   end
 
   def destroy

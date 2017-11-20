@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   post '/logout', to: 'application#welcome'
   get '/trips', to: 'trips#show'
 
+  resources :users, only: [:index] do
+    resources :trips, only: [:show]
+  end
+
 
   resources :trips, only: [:show, :new, :edit]
 
