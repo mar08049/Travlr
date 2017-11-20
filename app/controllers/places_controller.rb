@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
 
-  def index #show all user's places
+  def index
     @places = Place.all
   end
 
@@ -8,7 +8,7 @@ class PlacesController < ApplicationController
     @place = Place.new
   end
 
-  def create #create new place
+  def create
     @place = Place.new(place_params)
     if @place.valid?
       @place.save
@@ -26,13 +26,16 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
   end
 
-  def update #update place
+  def update
     @place = Place.find(params[:id])
     @place.update(name: params[:name], memory: params[:memory])
     redirect_to place_path(@place)
   end
 
-  def destroy #delete place
+  def destroy
+    @place = Place.find(params[:id])
+    @place.destroy
+    redirect_to place_path 
   end
 
   private
