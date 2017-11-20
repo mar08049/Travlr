@@ -9,9 +9,8 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new(place_params)
-    if @place.valid?
-      @place.save
+    if @place.valid
+    @place = @author.places.create(place_params)
       redirect_to place_path(@place)
     else
       render :new
@@ -35,7 +34,7 @@ class PlacesController < ApplicationController
   def destroy
     @place = Place.find(params[:id])
     @place.destroy
-    redirect_to place_path 
+    redirect_to place_path
   end
 
   private

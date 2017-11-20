@@ -1,0 +1,12 @@
+<center><h1>TRAVLR</h1>
+  <h3>Add a trip!</h3>
+
+<%= form_tag places_path do %>
+  <label>Trip name:</label><br>
+  <%= text_field_tag :'trip[name]' %><br>
+
+  <label>Year:</label><br>
+  <%= text_field_tag :'trip[date]' %><br>
+
+  <%= submit_tag "Submit" %>
+<% end %>

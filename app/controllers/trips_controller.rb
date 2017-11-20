@@ -5,8 +5,7 @@ class TripsController < ApplicationController
   end
 
   def create
-    @place = Place.find(params[:id])
-    @trip = @user.places.all
+    @trip = @user.trips.new(trip_params)
     if @trip.save
      redirect_to user_path(@user)
     else
@@ -15,12 +14,18 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = @user.places.all
+
   end
 
   def destroy
     @trip = Trip.find(params[:id])
     @trip.destroy
     redirect_to user_path
+  end
+
+  private
+
+  def place_params
+    params.require(:trip).permit(:name, :date)
   end
 end
