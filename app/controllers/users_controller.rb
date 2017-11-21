@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+  end
+
   def create
     @user = User.new
     @user.username = params[:username]
@@ -15,7 +19,7 @@ class UsersController < ApplicationController
   def new #render form for new user
   end
 
-  def show #show
+  def show 
     @user = User.find(params[:id])
   end
 

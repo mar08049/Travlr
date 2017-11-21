@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "application#welcome"
   get '/users', to: 'users#index'
   get '/signup', to: 'users#create'
-  post '/signup', to: 'users#new'
+  post '/signup', to: 'users#index'
   get '/login', to: 'users#login'
   post '/login', to: 'users#login'
   post '/users', to: 'users#index'
