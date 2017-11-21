@@ -2,31 +2,26 @@ require 'pry'
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @user = User.new
+  end
 
+  def new
+    @user = User.new
   end
             #user is set in nested hash params
   def create
-    @user = User.new
-    @user.username = params[:username]
-    @user.password = params[:password]
-    if @user.save
-      login_path(@user)
-      redirect_to @user
+    user = User.new(user_params)
+    if user.save
+      session[:user_id] = user.id
+
+      redirect_to user_path(user)
     else
       render 'users/create'
     end
+
   end
 
-  def new #render form for new user
-  end
 
-  def show
-    @user = User.find(params[:id])
-  end
-
-  def signin
-  end
 
   def trip
     @user = User.find(params[:id])
@@ -43,7 +38,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_comfirmation, :uid)
+      params.permit(:username, :email, :password, :password_comfirmation, :uid)
     end
 
 end
