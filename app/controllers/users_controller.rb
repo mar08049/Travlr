@@ -1,15 +1,17 @@
+require 'pry'
 class UsersController < ApplicationController
 
   def index
     @users = User.all
-  end
 
+  end
+            #user is set in nested hash params
   def create
     @user = User.new
     @user.username = params[:username]
     @user.password = params[:password]
     if @user.save
-      login_in(@user)
+      login_path(@user)
       redirect_to @user
     else
       render 'users/create'
@@ -19,7 +21,7 @@ class UsersController < ApplicationController
   def new #render form for new user
   end
 
-  def show 
+  def show
     @user = User.find(params[:id])
   end
 
