@@ -4,5 +4,6 @@
 
 <div>- <%= @place.memory %></div>
 <br>
-
-<%= link_to "Adventure Page", place_path %>
+<%= link_to "Edit Adventure?", edit_place_path %>
+<br>
+<%= link_to "Adventure Page", places_path(@place) %>

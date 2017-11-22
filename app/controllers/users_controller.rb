@@ -2,26 +2,26 @@ require 'pry'
 class UsersController < ApplicationController
 
   def index
-    @user = User.new
+    
   end
 
   def new
     @user = User.new
   end
-            #user is set in nested hash params
+
   def create
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-
-      redirect_to user_path(user)
+      redirect_to users_path(@user)
     else
-      render 'users/create'
+      render :create
     end
-
   end
 
-
+  def show
+    @user = User.find(params[:id])
+  end
 
   def trip
     @user = User.find(params[:id])
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def logout
     if @user
-      @user.session
+      @user.session.destroy
     end
   end
 

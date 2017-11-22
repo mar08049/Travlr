@@ -1,8 +1,10 @@
 <h1>TRAVLR</h1>
 <br>
 <h2>Welcome, <%= @user %></h2>
-<h3>List Trips:</h3>
+<h3>List your Trips:</h3>
 
-<h3>See All Places:</h3>
 
-<h3>New Trip Link</h3>
+<%= link_to "See Every Adventure", places_path %>
+<br>
+<br>
+<%= link_to "New Trip", new_trip_path %>

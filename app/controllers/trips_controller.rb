@@ -1,17 +1,17 @@
 class TripsController < ApplicationController
 
   def index
-    if params[:user_id]
-      @trips = User.find(params[:author_id]).trips
-    else
-      @trips = Trip.all
-    end
+    @trips = Trip.all
+  end
+
+  def new
+    @trip = Trip.new
   end
 
   def create
-    @trip = @user.trips.new(trip_params)
+    @trip = Trip.new(trip_params)
     if @trip.save
-     redirect_to user_path(@user)
+     redirect_to trips_path(@trip)
     else
      render :new
     end
@@ -29,7 +29,7 @@ class TripsController < ApplicationController
 
   private
 
-  def place_params
-    params.require(:trip).permit(:name, :date)
+  def trip_params
+    params.permit(:name, :date)
   end
 end

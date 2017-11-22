@@ -9,8 +9,8 @@ class PlacesController < ApplicationController
   end
 
   def create
-    if @place.valid
-    @place = @author.places.create(place_params)
+    @place = Place.new(place_params)
+    if @place.save
       redirect_to place_path(@place)
     else
       render :new
@@ -40,7 +40,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :memory)
+    params.permit(:name, :memory)
   end
 
 end

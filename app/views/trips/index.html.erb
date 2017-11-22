@@ -1,0 +1,13 @@
+<h1>TRAVLR</h1>
+<h3>Your Trips:</h3>
+
+<% @trips.each do |trip| %>
+  <div><%= link_to trip.name, trip_new_path(@trip) %>
+  </div>
+  <div><%= trip.date %></div>
+<% end %>
+<br>
+
+
+
+<%= link_to "Add New Trip", new_trip_path %>
