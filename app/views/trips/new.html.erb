@@ -1,12 +1,14 @@
 <center><h1>TRAVLR</h1>
   <h3>Add a trip!</h3>
 
-<%= form_tag trips_new_path do %>
-  <label>Trip name:</label><br>
-  <%= text_field_tag :'trip[name]' %><br>
+  <%= form_for :trip do |f| %>
 
-  <label>Year:</label><br>
-  <%= text_field_tag :'trip[date]' %><br>
-
-  <%= submit_tag "Submit" %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+  <br>
+  <br>
+  <%= f.submit "Create" %>
 <% end %>
