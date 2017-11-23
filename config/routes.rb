@@ -6,9 +6,14 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login'
   get '/signup', to: 'users#create'
   post '/signup', to: 'users#create'
-  get '/users', to: 'users#index'
+  get '/users/:id', to: 'users#index'
+  post '/users/:id', to: 'users#index'
   post '/trips', to: 'trips#index'
   post '/trips/new', to: 'trips#new'
+
+  #resources :trips do
+  #  resources :places
+  #end
 
   resources :trips, only: [:index, :show, :new, :edit, :create, :update]
 

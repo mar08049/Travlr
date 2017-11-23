@@ -1,8 +1,10 @@
 require 'pry'
 class UsersController < ApplicationController
 
+
   def index
-    
+    @user = User.new
+    @user.username = params[:username]
   end
 
   def new
@@ -10,8 +12,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
+    @user = User.new(user_params)
+    if @user.save
+      username = params[:username]
       session[:user_id] = user.id
       redirect_to users_path(@user)
     else
@@ -21,12 +24,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-  end
-
-  def trip
-    @user = User.find(params[:id])
-    @trip = Trip.find(params[:trip_id])
-    render template: 'trips/show'
   end
 
   def logout
