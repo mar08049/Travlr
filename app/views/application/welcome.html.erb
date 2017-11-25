@@ -2,10 +2,8 @@
   <center><h3>Track your Adventures, Share your Story.</h3>
 
 
-
-  <%= link_to "Log In", login_path %>
-  ... if you don't have an account,
-  <%= link_to "Sign Up", signup_path %>
+  <h3><%= link_to "LOG IN", sessions_new_path %></h3>
+  <p>Don't have an account? <%= link_to "SIGN UP", new_user_path %></p>
   <br>
   <br>
 
@@ -15,5 +13,5 @@
     <h2>Facebook UID: <%= @user.uid %></h2>
     <img src="<%= @user.image %>">
   <% else %>
-  
+
   <% end %>

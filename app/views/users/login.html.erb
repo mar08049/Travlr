@@ -1,14 +1,13 @@
-<center><h1>TRAVLR</h1>
-  <h3>Login below:</h3>
+<center><h3>Login below:</h3>
 
-  <%= form_for :user do |f| %>
+<%= form_for :user do |f| %>
 
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
-  <br>
-  <%= f.submit "Log In" %>
+<%= f.label :username %>
+<%= f.text_field :username %>
+<br>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<br>
+<br>
+<%= f.submit "Log In" %>
 <% end %>
