@@ -1,4 +1,4 @@
 class Place < ActiveRecord::Base
   has_many :users, through: :trips
-  has_many :trips
+  belongs_to :trip
 end
