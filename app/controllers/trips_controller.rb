@@ -19,11 +19,11 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find(params[:id])
+    @trip = Trip.find(params[:trip_id])
   end
 
   def destroy
-    @trip = Trip.find(params[:id])
+    @trip = Trip.find(params[:trip_id])
     @trip.destroy
     redirect_to user_path
   end

@@ -9,9 +9,4 @@
 <br>
 <h4>You have been on <%= @places.all.count %> awesome adventures! Keep it up!</h4>
 
-<nav class="">
-    <ul>
-        <li> <%= link_to "My Dashboard", users_path %> </li>
-        <li> <%= link_to "Add New Adventure", new_place_path %></li>
-    </ul>
-</nav>
+<%= render 'layouts/footer' %>

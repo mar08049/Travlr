@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
   def index
     @user = User.new
-    @user.username = params[:username]
   end
 
   def new
@@ -14,11 +13,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      @user.username = params[:user][:username]
+      @user.username = params[:username]
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      render :create
+      render :new
     end
   end
 
