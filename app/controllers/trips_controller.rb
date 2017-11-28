@@ -19,11 +19,11 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find(params[:trip_id])
+    @trip = Trip.find(params[:id])
   end
 
   def destroy
-    @trip = Trip.find(params[:trip_id])
+    @trip = Trip.find(params[:id])
     @trip.destroy
     redirect_to user_path
   end
@@ -31,6 +31,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.permit(:name, :date)
+    params.require(:trip).permit(:name, :date)
   end
 end

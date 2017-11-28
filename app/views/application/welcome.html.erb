@@ -3,15 +3,8 @@
 
 
   <h3><%= link_to "LOG IN", sessions_new_path %></h3>
-  <p>Don't have an account? <%= link_to "SIGN UP", new_user_path %></p>
+  <p>Don't have an account? <%= link_to "SIGN UP", signup_path %></p>
   <br>
   <br>
 
-  <% if session[:user_id] %>
-    <h1><%= @user.name %></h1>
-    <h2>Email: <%= @user.email %></h2>
-    <h2>Facebook UID: <%= @user.uid %></h2>
-    <img src="<%= @user.image %>">
-  <% else %>
-
-  <% end %>
+  

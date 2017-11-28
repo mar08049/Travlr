@@ -13,11 +13,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      @user.username = params[:username]
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      render :new
+      flash[:danger] = 'Invalid email/password combination'
+      render 'new'
     end
   end
 
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.permit(:username, :email, :password, :password_comfirmation, :uid)
+      params.require(:user).permit(:username, :email, :password, :password_comfirmation, :uid)
     end
 
 end
