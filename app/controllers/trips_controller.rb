@@ -22,7 +22,8 @@ class TripsController < ApplicationController
     @trip = Trip.find(id: params[:id])
   end
 
-  def update
+  def edit
+    @trip = Trip.find(id: params[:id])
   end
 
   def destroy

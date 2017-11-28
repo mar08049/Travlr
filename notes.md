@@ -13,7 +13,7 @@ Login                O
 Signup               O
 User/:id             O
 User creates trip    -
-User/:id shows trips -
+User/:id shows trips O
 User/:id edits trips -
 User/:id delete trips-
 Can add places to tr -
@@ -23,3 +23,5 @@ Can find by year     -
 Can see all places   -
 
 O = completed
+
+route reads user id correctly in (/users/5) but when selecting a trip, route changes to /users/3/trips/7. why?

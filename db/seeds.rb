@@ -7,12 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Trip.create!([{
+Trip.create([{
   name: "Asia",
+  date: "2016",
+  user_id: 5
+},
+{
+  name: "Africa",
   date: "2014",
   user_id: 5
-  }])
-
-
+},
+{
+  name: "France",
+  date: "2010",
+  user_id: 5
+}])
 
 p "Created #{Trip.count} trips"
