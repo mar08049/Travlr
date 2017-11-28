@@ -17,7 +17,7 @@ class PlacesController < ApplicationController
     end
   end
 
-  def edit #render form to edit place
+  def edit 
     @place = Place.find(params[:id])
   end
 

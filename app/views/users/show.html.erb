@@ -3,6 +3,11 @@
 <h2>Welcome, <%= @user.username.capitalize %> </h2>
 <h3>List your Trips:</h3>
 
+<% @user.trips.each do |trip| %>
+<li><%=link_to trip.name, trip.date, edit_user_trip_path(trip) %></li>
+<% end %>
 
-<%= link_to 'Add Trip', new_user_trip_path(@user, @trip) %>
+<br>
+<%= link_to 'Add Trip', new_user_trip_path(@user, @trip) %><br>
+<br>
 <%= render 'layouts/footer' %>

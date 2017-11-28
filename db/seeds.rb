@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Trip.create!([{
+  name: "Asia",
+  date: "2014",
+  user_id: 5
+  }])
+
+
+
+p "Created #{Trip.count} trips"
