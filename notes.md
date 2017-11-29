@@ -1,20 +1,12 @@
-1. Login failing-stays on same view when initiating action.
-2. Signin failing
-3. Cannot create trips
-4. Need to connect Users to trips to places.
-5. Not apble to find Trip.ID.
-
-
-
 
 Progress:
 Welcome/Application  O
 Login                O
 Signup               O
 User/:id             O
-User creates trip    -
+User creates trip    -  ...Fails when clicking create button.
 User/:id shows trips O
-User/:id edits trips -
+User/:id edits trips -  ...Fails when clicking edit button.
 User/:id delete trips-
 Can add places to tr -
 Can edit places      O
@@ -26,6 +18,8 @@ Logout               O
 O = completed
 *Current Problems*
 For User/:id/trip/:id/edit, route reads user id correctly in (/users/5) but when selecting a trip, route changes to /users/3/trips/7. why?
+
+Cannot differentiate between @trip's when attempting to "show" or "edit"
 
 
 *Routes*

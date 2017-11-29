@@ -1,7 +1,7 @@
 <center><h1>TRAVLR</h1>
 <h3>Edit this trip!</h3>
 
-<%= form_for edit_user_trip_path do |f| %>
+<%= form_for @trip, url: {action: "update"} do |f| %>
 
 <%= f.label :name %>
 <%= f.text_field :name %>

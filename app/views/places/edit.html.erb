@@ -1,19 +1,19 @@
 <center><h1>TRAVLR</h1>
 <h3>Edit your adventure!</h3>
 
-<%= form_tag place_path(@place), method: "put" do  %>
-  <label>Place:</label><br>
-  <%= text_field_tag :name, @place.name %><br>
+<%= form_for @place, url: {action: "update"} do |f| %>
 
-
-  <label>Memory:</label><br>
-  <%= text_area_tag :memory, @place.memory %><br>
-
-
-  <%= submit_tag "Submit" %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.label :memory %>
+<%= f.text_field :memory %>
+<br>
+<br>
+<%= f.submit "Change" %>
 <% end %>
 
-<%= link_to "Adventure Page", place_path %>
+<%= link_to "Adventure Page", user_path %>
 <br>
 
 <%= render 'layouts/footer' %>

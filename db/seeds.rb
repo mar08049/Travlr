@@ -7,20 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Trip.create([{
-  name: "Asia",
-  date: "2016",
-  user_id: 3
+Place.create([{
+  name: "Cambodia",
+  memory: "Ate bananas",
+  user_id: 3,
+  trip_id: 8,
 },
 {
-  name: "Africa",
-  date: "2014",
-  user_id: 3
+  name: "Thailand",
+  memory: "Went to the beach",
+  user_id: 3,
+  trip_id: 8,
 },
 {
-  name: "France",
-  date: "2010",
-  user_id: 3
+  name: "Myanmar",
+  memory: "Road a hot air baloon",
+  user_id: 3,
+  trip_id: 8
 }])
 
-p "Created #{Trip.count} trips"
+p "Created #{Place.count} places"

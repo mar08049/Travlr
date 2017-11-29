@@ -23,26 +23,26 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
   end
 
-  def show #show single place with details
+  def show
     @place = Place.find(params[:id])
   end
 
   def update
     @place = Place.find(params[:id])
     @place.update(name: params[:name], memory: params[:memory])
-    redirect_to place_path(@place)
+    redirect_to user_trip_place_path(@place)
   end
 
   def destroy
     @place = Place.find(params[:id])
     @place.destroy
-    redirect_to place_path
+    redirect_to user_trip_path
   end
 
   private
 
   def place_params
-    params.permit(:name, :memory)
+    params.require(:place).permit(:name, :memory, :user_id, :trip_id)
   end
 
 end

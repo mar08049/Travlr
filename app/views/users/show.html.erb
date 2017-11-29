@@ -4,7 +4,7 @@
 <h3>Your <%= @user.trips.count %> trips:</h3>
 
 <% @user.trips.each do |trip| %>
-<li><%=link_to trip.name, edit_user_trip_path(trip) %>-<%= trip.date %></li>
+<h3><%=link_to trip.name, user_trip_path(trip) %>-<%= trip.date %></h3>
 <% end %>
 
 <br>
