@@ -5,21 +5,24 @@
 
   html {color: white;
         font-family: "Impact";
-        letter-spacing: 2px;
+        letter-spacing: 3px;
       }
   h1 {font-size: 3em}
   body {background-size: cover;
         background-repeat: no-repeat;}
+  a { color: white}
+  .login {background-color: black;
+          opacity: .60;
+          margin-top: 425px}
   </style>
 </head>
 <body background= "https://edge.alluremedia.com.au/m/g/2016/01/rio-de-janeiro-sunset.jpg">
 <center><h1>TRAVLR.</h1>
   <center><h2>Track your Adventures, Share your Story.</h2>
 
-
+<div class= "login">
   <h3><%= link_to "LOG IN", sessions_new_path %></h3>
   <p>Don't have an account? <%= link_to "SIGN UP", signup_path %></p>
-  <br>
-  <br>
+</div>
 </body>
 </html>
