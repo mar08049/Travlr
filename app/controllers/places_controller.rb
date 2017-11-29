@@ -17,7 +17,9 @@ class PlacesController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
+    @user = User.find(params[:id])
+    @trip = Trip.find(params[:id])
     @place = Place.find(params[:id])
   end
 

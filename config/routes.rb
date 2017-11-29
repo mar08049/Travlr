@@ -10,9 +10,6 @@ Rails.application.routes.draw do
   post '/login',   to: 'sessions#create'
   get '/logout',  to: 'sessions#destroy'
 
-  post '/users/:user_id/trips/new', to: 'trips#show'
-  post '/users/:user_id/trips/:trip_id/edit', to: 'trips#edit'
-
   resources :users do
     resources :trips do
       resources :places

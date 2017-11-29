@@ -23,18 +23,29 @@ class TripsController < ApplicationController
   end
 
   def edit
-    @trip = Trip.find(id: params[:id])
+    @user = User.find(params[:id])
+    @trip = Trip.find(params[:id])
+
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    if @trip.update(trip_params)
+      redirect_to user_path(current_user)
+    else
+      render :edit
+    end
   end
 
   def destroy
     @trip = Trip.find(params[:id])
     @trip.destroy
-    redirect_to user_path
+    redirect_to user_path(current_user)
   end
 
   private
 
   def trip_params
-    params.require(:trip).permit(:name, :date)
+    params.require(:trip).permit(:name, :date, :user_id)
   end
 end

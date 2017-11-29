@@ -10,17 +10,17 @@
 Trip.create([{
   name: "Asia",
   date: "2016",
-  user_id: 5
+  user_id: 3
 },
 {
   name: "Africa",
   date: "2014",
-  user_id: 5
+  user_id: 3
 },
 {
   name: "France",
   date: "2010",
-  user_id: 5
+  user_id: 3
 }])
 
 p "Created #{Trip.count} trips"
