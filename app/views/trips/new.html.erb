@@ -4,13 +4,13 @@
 <body>
     <h3>Add a trip!</h3>
 
-    <%= form_for @trip do |f| %>
+    <%= form_for(:trip , action: "create") do |f| %>
 
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br>
     <br>
-    <%= f.label :date %>
+    <%= f.label :year %>
     <%= f.text_field :date %>
     <br>
     <br>
