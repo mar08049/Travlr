@@ -6,11 +6,10 @@
 <%= link_to "Edit", edit_user_trip_path(@trip) %>
 <%= link_to "Delete", user_trip_path(current_user, @trip), method: :delete %><br>
 <h3>You went on <%= @trip.places.count %> adventures on this trip!</h3>
+<br>
   <% @trip.places.each do |place| %>
   <h3><%=link_to place.name, user_trip_place_path(@trip, place) %>-<%= place.memory %></h3>
   <% end %>
 
-
-
-<center><%= render 'layouts/footer' %>
+<%= render 'layouts/footer' %>
 </body>

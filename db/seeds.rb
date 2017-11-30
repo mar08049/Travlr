@@ -8,22 +8,28 @@
 
 
 Place.create([{
-  name: "Cambodia",
-  memory: "Ate bananas",
+  name: "Madrid",
+  memory: "Went to a Real Madrid Game",
   user_id: 3,
-  trip_id: 8,
+  trip_id: 10,
 },
 {
-  name: "Thailand",
+  name: "Barcelona",
   memory: "Went to the beach",
   user_id: 3,
-  trip_id: 8,
+  trip_id: 10,
 },
 {
-  name: "Myanmar",
-  memory: "Road a hot air baloon",
+  name: "Gibralter",
+  memory: "Hiked to the top!",
   user_id: 3,
-  trip_id: 8
-}])
+  trip_id: 10,
+},
+{
+  name: "Valencia",
+  memory: "Ran with the bulls",
+  user_id: 3,
+  trip_id: 10,
+  }])
 
 p "Created #{Place.count} places"

@@ -5,12 +5,12 @@ Signup               O
 User/:id             O
 User creates trip    -  ...Fails when clicking create button.
 User/:id shows trips O
-User/:id edits trips O 
+User/:id edits trips O
 User/:id delete tripsO
 Can add places to tr -
 Can edit places      O
 Can delete places    O
-Can find by year     -
+Can filter places    -
 Logout               O
 
 O = completed
