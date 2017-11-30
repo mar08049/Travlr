@@ -1,16 +1,19 @@
 <%= render "layouts/header" %>
 
 <center><h1>TRAVLR.</h1>
-  <h3>Add a trip!</h3>
+<body>
+    <h3>Add a trip!</h3>
 
-  <%= form_for user_trips_path do |f| %>
+    <%= form_for @trip do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :date %>
-  <%= f.text_field :date %>
-  <br>
-  <br>
-  <%= f.submit "Create" %>
-<% end %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+    <br>
+    <br>
+    <%= f.submit "Create" %>
+  <% end %>
+</body>

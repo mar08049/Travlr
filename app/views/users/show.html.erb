@@ -2,6 +2,7 @@
 
 <center><h1>TRAVLR.</h1>
 <br>
+<body>
 <h2>Welcome, <%= @user.username.capitalize %>!</h2>
 <h3>Your <%= @user.trips.count %> trips:</h3>
 
@@ -13,3 +14,4 @@
 <%= link_to 'Add Trip', new_user_trip_path(@user, @trip) %><br>
 <br>
 <%= render 'layouts/footer' %>
+</body>

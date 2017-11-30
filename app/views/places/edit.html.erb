@@ -1,6 +1,7 @@
 <%= render "layouts/header" %>
 
 <center><h1>TRAVLR</h1>
+<body>
 <h3>Edit your adventure!</h3>
 
 <%= form_for @place, url: {action: "update"} do |f| %>
@@ -15,7 +16,5 @@
 <%= f.submit "Change" %>
 <% end %>
 
-<%= link_to "Adventure Page", user_path %>
-<br>
-
 <%= render 'layouts/footer' %>
+</body>

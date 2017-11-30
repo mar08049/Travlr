@@ -1,12 +1,14 @@
 <%= render "layouts/header" %>
 
 <center><h1>TRAVLR.</h1>
-<%= form_for(:session, url: login_path) do |f| %>
-<%= f.label :username %>
-    <%= f.text_field :username, class: 'form-control' %>
+<body>
+  <%= form_for(:session, url: login_path) do |f| %>
+  <%= f.label :username %>
+      <%= f.text_field :username, class: 'form-control' %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control' %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
 
-    <%= f.submit "Log in", class: "btn btn-primary" %>
-  <% end %>
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+</body>

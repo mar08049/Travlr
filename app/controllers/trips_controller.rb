@@ -12,19 +12,17 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     if @trip.save
-     redirect_to trips_path(@trip)
+     redirect_to user_path(current_user)
     else
      render :new
     end
   end
 
   def show
-  
     @trip = Trip.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
     @trip = Trip.find(params[:id])
 
   end

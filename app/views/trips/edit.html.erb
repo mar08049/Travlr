@@ -1,5 +1,7 @@
 <%= render "layouts/header" %>
 <center><h1>TRAVLR</h1>
+
+<body>
 <h3>Edit this trip!</h3>
 
 <%= form_for @trip, url: {action: "update"} do |f| %>
@@ -15,3 +17,4 @@
 <% end %>
 
 <%= render 'layouts/footer' %>
+</body>
