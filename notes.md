@@ -3,7 +3,7 @@ Welcome/Application  O
 Login                O
 Signup               O
 User/:id             O
-User creates trip    -  ...Fails when clicking create button.
+User creates trip    O
 User/:id shows trips O
 User/:id edits trips O
 User/:id delete tripsO
@@ -15,4 +15,4 @@ Logout               O
 
 O = completed
 *Current Problems*
-Cannot differentiate between @trip's when attempting to "show" or "edit"
+Places route confuses ID's.

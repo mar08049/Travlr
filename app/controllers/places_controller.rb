@@ -9,7 +9,7 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new(place_params)
+    @place = @user.trip.places.new(place_params)
     if @place.save
       redirect_to user_trip_place_path(@place)
     else
@@ -24,7 +24,7 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @place = Place.find(params [:id])
+    @place = Place.find(params[:id])
   end
 
   def update
