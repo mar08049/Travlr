@@ -8,7 +8,7 @@
 <h3>You went on <%= @trip.places.count %> adventures on this trip!</h3>
 <ul>
   <% @trip.places.each do |place| %>
-  <li><%=link_to place.name, user_trip_place_path(place) %>-<%= place.memory %></li>
+  <li><%=link_to place.name, user_trip_place_path(@trip,place) %>-<%= place.memory %></li>
   <% end %>
 <ul>
 

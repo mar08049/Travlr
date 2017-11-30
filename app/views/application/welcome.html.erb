@@ -6,14 +6,18 @@
   html {color: white;
         font-family: "Impact";
         letter-spacing: 3px;
+        font-size: 1.2em;
       }
   h1 {font-size: 3em}
   body {background-size: cover;
         background-repeat: no-repeat;}
   a { color: white}
   .login {background-color: black;
-          opacity: .60;
-          margin-top: 425px}
+          background: rgba(0, 0, 0, 0.7);
+          margin-top: 350px;
+          padding-top: 7px;
+          padding-bottom: 7px;
+          }
   </style>
 </head>
 <body background= "https://edge.alluremedia.com.au/m/g/2016/01/rio-de-janeiro-sunset.jpg">
@@ -22,6 +26,7 @@
 
 <div class= "login">
   <h3><%= link_to "LOG IN", sessions_new_path %></h3>
+  <h3><%= link_to('LOG IN WITH FACEBOOK!', '/auth/facebook') %></h3>
   <p>Don't have an account? <%= link_to "SIGN UP", signup_path %></p>
 </div>
 </body>
