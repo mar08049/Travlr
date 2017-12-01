@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   has_secure_password validations: false
 
-
+  def self.number_of_trips
+    self.trips.count
+  end
 
 end
