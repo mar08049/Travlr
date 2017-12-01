@@ -1,3 +1,4 @@
+require 'pry'
 class PlacesController < ApplicationController
 
   def index
@@ -5,13 +6,13 @@ class PlacesController < ApplicationController
   end
 
   def new
-    @place = Place.new
+    @place = Place.new(trip_id: params[:trip_id])
   end
 
   def create
-    @place = @trip.places.new(place_params)
+    @place = Place.new(place_params)
     if @place.save
-      redirect_to user_trip_place_path(current_user, @trip, @place)
+      redirect_to trip_place_path(:trip_id, @place)
     else
       render :new
     end
@@ -27,14 +28,14 @@ class PlacesController < ApplicationController
 
   def update
     @place = Place.find(params[:id])
-    @place.update(name: params[:name], memory: params[:memory])
-    redirect_to user_trip_place_path(@place)
+    @place.update(place_params)
+    redirect_to trip_place_path(@place)
   end
 
   def destroy
     @place = Place.find(params[:id])
     @place.destroy
-    redirect_to user_trip_path
+    redirect_to user_path(current_user)
   end
 
   private

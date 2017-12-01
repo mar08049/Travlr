@@ -3,8 +3,9 @@
 <center><h1>TRAVLR.</h1>
   <h3>All your adventures!</h3>
 <left><ul>
-   <% @places.each do |place| %>
+   <% @user.places.each do |place| %>
   <li>  <%= place.name  %></li>
+  <br>
   <% end %>
 </ul>
 <br>

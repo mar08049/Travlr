@@ -8,9 +8,10 @@
 <h3>You went on <%= @trip.places.count %> adventures on this trip!</h3>
 <br>
   <% @trip.places.each do |place| %>
-  <h3><%=link_to place.name, user_trip_place_path(current_user, @trip, place) %>-<%= place.memory %></h3>
+  <h3><%=link_to place.name, trip_place_path(@trip, place) %></h3>
   <% end %>
-  <%= link_to "Add Adventure?", new_user_trip_place_path(current_user, @trip, @place) %>
 
+  <%= link_to "Add Adventure?", new_trip_place_path(@trip, @place) %>
+  <br>
 <%= render 'layouts/footer' %>
 </body>

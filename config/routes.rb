@@ -14,12 +14,15 @@ Rails.application.routes.draw do
   post '/users/:id/trips/new', to: 'trips#create'
 
   resources :users do
-    resources :trips do
+    resources :trips
+  end
+
+  resources :trips do
       resources :places
-    end
   end
 
   resources :users do
-    resources :places
+    resources :places, only: [:index]
   end
+
 end

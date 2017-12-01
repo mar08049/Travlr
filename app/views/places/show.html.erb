@@ -1,9 +1,12 @@
 <%= render "layouts/header" %>
 
 <center><h1>TRAVLR</h1>
+  <br>
 <body>
 <h3><%= @place.name %>- <%= @place.memory %></h3>
 <br>
+<%= link_to "Edit", edit_trip_place_path(@place) %>
+<%= link_to "Delete", trip_place_path(:trip_id , @place), method: :delete %>
 <br>
 <%= render 'layouts/footer' %>
 </body>
