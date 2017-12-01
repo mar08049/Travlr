@@ -2,9 +2,9 @@
 
 <center><h1>TRAVLR</h1>
 <body>
-  <h3>Add a destination and your favorite memory!</h3>
+  <h3>Add an adventure and your favorite memory!</h3>
 
-  <%= form_for @place do |f| %>
+  <%= form_for @place, url: {action: "create"} do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>

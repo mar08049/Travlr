@@ -1,3 +1,12 @@
-<% @user.places.each do |place| %>
-  <%= place.name %>
-<% end %>
+<%= render "layouts/header" %>
+
+<center><h1>TRAVLR.</h1>
+  <h3>All your adventures!</h3>
+<left><ul>
+   <% @places.each do |place| %>
+  <li>  <%= place.name %></li>
+  <% end %>
+</ul>
+<br>
+<p>Add new adventures after creating a trip.</p>
+  <%= render "layouts/footer" %>

@@ -9,17 +9,15 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = @user.trip.places.new(place_params)
+    @place = @trip.places.new(place_params)
     if @place.save
-      redirect_to user_trip_place_path(@place)
+      redirect_to user_trip_place_path(current_user, @trip, @place)
     else
       render :new
     end
   end
 
   def edit
-    @user = User.find(params[:id])
-    @trip = Trip.find(params[:id])
     @place = Place.find(params[:id])
   end
 

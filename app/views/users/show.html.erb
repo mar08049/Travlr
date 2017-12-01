@@ -13,5 +13,7 @@
 <br>
 <%= link_to 'Add Trip', new_user_trip_path(@user, @trip) %><br>
 <br>
+<%= link_to 'All Adventures', user_places_path(current_user, @path) %><br>
+
 <%= render 'layouts/footer' %>
 </body>

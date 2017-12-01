@@ -10,5 +10,7 @@
   <% @trip.places.each do |place| %>
   <h3><%=link_to place.name, user_trip_place_path(current_user, @trip, place) %>-<%= place.memory %></h3>
   <% end %>
+  <%= link_to "Add Adventure?", new_user_trip_place_path(current_user, @trip, @place) %>
+
 <%= render 'layouts/footer' %>
 </body>
