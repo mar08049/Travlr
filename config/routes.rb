@@ -18,4 +18,8 @@ Rails.application.routes.draw do
       resources :places
     end
   end
+
+  resources :users do
+    resources :places
+  end
 end
