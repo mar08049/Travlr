@@ -4,7 +4,7 @@
   <h3>All your adventures!</h3>
 <left><ul>
    <% @places.each do |place| %>
-  <li>  <%= link_to place.name, user_trip_place_path(current_user, @trip, place) %></li>
+  <li>  <%= place.name  %></li>
   <% end %>
 </ul>
 <br>
