@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Place.delete_all
 
 Place.create([{
   name: "Madrid",
@@ -29,6 +30,12 @@ Place.create([{
   name: "Valencia",
   memory: "Ran with the bulls",
   user_id: 3,
+  trip_id: 10,
+  },
+  {
+  name: "Lima",
+  memory: "Flew a kite",
+  user_id: 4,
   trip_id: 10,
   }])
 
