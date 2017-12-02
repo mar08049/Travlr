@@ -10,7 +10,7 @@ User/:id delete tripsO
 Can add places to tr O
 Can edit places      O
 Can delete places    O
-Can filter places    -
+See all adventures   O
 Logout               O
 
 O = completed

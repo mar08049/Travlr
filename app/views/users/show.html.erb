@@ -4,6 +4,9 @@
 <br>
 <body>
 <h2>Welcome, <%= @user.username.capitalize %>!</h2>
+<% if flash[:success] %>
+  <p style="color: green;"><%= flash[:success] %></p>
+<% end %>
 <h3>Your <%= @user.trips.count %> trip(s):</h3>
 
 <% @user.trips.each do |trip| %>

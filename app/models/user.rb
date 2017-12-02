@@ -9,4 +9,11 @@ class User < ActiveRecord::Base
     self.all.sort_by {|user| user.trips.size * -1}[0]
   end
 
+  def self.find_or_create_by_omniauth(auth_hash)
+    where(email: auth_hash[:info][:email]).first_or_create do |user|
+      user.name = auth_hash[:info][:name]
+      user.password = SecureRandom.hex
+    end
+  end
+
 end

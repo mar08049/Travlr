@@ -2,12 +2,8 @@
 
 <center><h1>TRAVLR.</h1>
   <h3>Travlr's most travelled!</h3>
-<ul>
-   <% @users.number_of_trips.each do |user| %>
-  <li>  <%= user.name  %></li>
+   <p><%= User.number_of_trips.username %> - <%= User.number_of_trips.trips.count %> trips!</p>
   <br>
-  <% end %>
-</ul>
+  <p>Can you catch <%= User.number_of_trips.username %>? Prove it!</p>
 <br>
-<p>Add new adventures after creating a trip.</p>
   <%= render "layouts/footer" %>

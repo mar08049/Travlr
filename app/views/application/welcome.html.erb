@@ -10,14 +10,17 @@
       }
   h1 {font-size: 3em}
   body {background-size: cover;
-        background-repeat: no-repeat;}
+        background-repeat: no-repeat;
+        background-attachment: fixed;}
   a { color: white}
   .login {background-color: black;
           background: rgba(0, 0, 0, 0.7);
           margin-top: 350px;
           padding-top: 5px;
           padding-bottom: 5px;
+          width: 100%;
           }
+   a:hover {font-size: 1.1em}
   </style>
 </head>
 <body background= "https://edge.alluremedia.com.au/m/g/2016/01/rio-de-janeiro-sunset.jpg">
@@ -26,6 +29,14 @@
 
 <div class= "login">
  <h3><%= link_to "LOG IN", sessions_new_path %></h3>
+   <% if session[:user_id] %>
+     <h1><%= @user.name %></h1>
+     <h2>Email: <%= @user.email %></h2>
+     <h2>Facebook UID: <%= @user.uid %></h2>
+     <img src="<%= @user.image %>">
+   <% else %>
+     <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+   <% end %> 
   <p>Don't have an account? <%= link_to "SIGN UP", signup_path %></p>
 </div>
 </body>

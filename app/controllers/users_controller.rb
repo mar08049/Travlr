@@ -1,9 +1,10 @@
-require 'pry'
 class UsersController < ApplicationController
 
 
   def index
-    @user = User.new
+    @users = User.all
+    @users = User.number_of_trips
+
   end
 
   def new

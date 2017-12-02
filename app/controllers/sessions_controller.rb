@@ -12,6 +12,18 @@ class SessionsController < ApplicationController
     validate_login
   end
 
+  def create_fb
+    @user = User.find_or_create_by(uid: auth['uid']) do |u|
+      u.name = auth['info']['name']
+      u.email = auth['info']['email']
+      u.image = auth['info']['image']
+    end
+
+    session[:user_id] = @user.id
+
+    render 'application/welcome'
+  end
+
   def destroy
     log_out
   end
