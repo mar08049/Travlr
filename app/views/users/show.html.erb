@@ -4,7 +4,7 @@
 <br>
 <body>
 <h2>Welcome, <%= @user.username.capitalize %>!</h2>
-<h3>Your <%= @user.trips.count %> trips:</h3>
+<h3>Your <%= @user.trips.count %> trip(s):</h3>
 
 <% @user.trips.each do |trip| %>
 <h3><%=link_to trip.name, user_trip_path(@user, trip) %>-<%= trip.date %></h3>
@@ -13,7 +13,7 @@
 <br>
 <%= link_to 'Add Trip', new_user_trip_path(@user, @trip) %><br>
 <br>
-<%= link_to 'All Adventures', user_places_path(current_user, @path) %><br>
-
+<%= link_to "Traveler's Most Travelled", users_path(@users) %>
+<br>
 <%= render 'layouts/footer' %>
 </body>

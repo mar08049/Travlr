@@ -12,6 +12,7 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
     if @place.save
+      flash[:success] = "Added one adventure!"
       redirect_to trip_place_path(:trip_id, @place)
     else
       render :new

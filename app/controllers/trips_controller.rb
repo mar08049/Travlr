@@ -1,4 +1,3 @@
-require 'pry'
 class TripsController < ApplicationController
 
   def index
@@ -13,6 +12,7 @@ class TripsController < ApplicationController
   def create
     @trip = current_user.trips.new(trip_params)
     if @trip.save
+     flash[:success] = "You've added a new trip!"
      redirect_to user_trip_path(current_user, @trip)
     else
      render :new
@@ -31,6 +31,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     if @trip.update(trip_params)
+      flash[:success] = "Trip updated!"
       redirect_to user_path(current_user)
     else
       render :edit
@@ -40,6 +41,7 @@ class TripsController < ApplicationController
   def destroy
     @trip = Trip.find(params[:id])
     @trip.destroy
+    flash[:success] = "Trip deleted"
     redirect_to user_path(current_user)
   end
 

@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
       log_in(user)
       redirect_to user
     else
-    flash.now[:danger] = 'Invalid username/password combination'
+    flash.now[:danger] = 'Invalid username/password. Try again.'
     render :new
     end
   end
