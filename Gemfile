@@ -13,11 +13,9 @@ gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 gem 'dotenv-rails'
-<<<<<<< HEAD
 
 gem "omniauth-google-oauth2", "~> 0.2.1"
-=======
->>>>>>> e1aaef4a7bcf79e774464766820c0843f8e4f27d
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

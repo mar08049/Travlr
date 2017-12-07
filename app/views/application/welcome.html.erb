@@ -28,19 +28,16 @@
   <center><h2>Track your Adventures, Share your Story.</h2>
 
 <div class= "login">
+
  <h3><%= link_to "LOG IN", sessions_new_path %></h3>
-   <% if session[:user_id] %>
-     <h1><%= @user.name %></h1>
-     <h2>Email: <%= @user.email %></h2>
-     <h2>Facebook UID: <%= @user.uid %></h2>
-     <img src="<%= @user.image %>">
-   <% else %>
-     <%= link_to('Log in with Facebook!', '/auth/facebook') %>
-<<<<<<< HEAD
-   <% end %>
-=======
-   <% end %> 
->>>>>>> e1aaef4a7bcf79e774464766820c0843f8e4f27d
+     <% if session[:user_id] %>
+       <h2><%= @user.username %></h2>
+       <img src="<%= @user.image %>"><br>
+       <br>
+       <%= link_to "Enter", user_path(current_user) %>
+     <% else %>
+       <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+     <% end %>
   <p>Don't have an account? <%= link_to "SIGN UP", signup_path %></p>
 </div>
 </body>

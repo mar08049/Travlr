@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171207211149) do
-=======
-ActiveRecord::Schema.define(version: 20171128173023) do
->>>>>>> e1aaef4a7bcf79e774464766820c0843f8e4f27d
+ActiveRecord::Schema.define(version: 20171207224931) do
 
   create_table "places", force: :cascade do |t|
     t.string "name"
@@ -33,10 +29,9 @@ ActiveRecord::Schema.define(version: 20171128173023) do
     t.string "username"
     t.string "password"
     t.string "password_digest"
-<<<<<<< HEAD
     t.string "email"
-=======
->>>>>>> e1aaef4a7bcf79e774464766820c0843f8e4f27d
+    t.string "uid"
+    t.string "image"
   end
 
 end
