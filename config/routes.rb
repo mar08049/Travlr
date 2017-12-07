@@ -10,9 +10,13 @@ Rails.application.routes.draw do
   post '/login',   to: 'sessions#create'
   get '/logout',  to: 'sessions#destroy'
 
+<<<<<<< HEAD
   get 'auth/:provider/callback', to: 'sessions#oauth'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+=======
+  get '/auth/facebook/callback', to: 'sessions#create_fb'
+>>>>>>> e1aaef4a7bcf79e774464766820c0843f8e4f27d
   post '/users/:id/trips/new', to: 'trips#create'
 
   resources :users do
