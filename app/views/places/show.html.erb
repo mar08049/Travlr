@@ -1,0 +1,15 @@
+<%= render "layouts/header" %>
+
+<center><h1>TRAVLR</h1>
+  <br>
+<body>
+  <% if flash[:success] %>
+  <p style="color: green;"><%= flash[:success] %></p>
+<% end %>
+<p><%= @place.name %>- <%= @place.memory %></p>
+<br>
+<%= link_to "Edit", edit_trip_place_path(@place) %>
+<%= link_to "Delete", trip_place_path(:trip_id , @place), method: :delete %>
+<br>
+<%= render 'layouts/footer' %>
+</body>

@@ -1,0 +1,9 @@
+<%= render "layouts/header" %>
+
+<center><h1>TRAVLR.</h1>
+  <h3>Travlr's most travelled!</h3>
+   <p><%= User.number_of_trips.username %> - <%= User.number_of_trips.trips.count %> trips!</p>
+  <br>
+  <p>Can you catch <%= User.number_of_trips.username %>? Prove it!</p>
+<br>
+  <%= render "layouts/footer" %>

@@ -1,0 +1,25 @@
+<%= render "layouts/header" %>
+
+<center><h1>TRAVLR.</h1>
+<body>
+  <%= form_for @user do |f| %>
+
+  <%= render 'layouts/error_messages', object: f.object %>
+
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <br>
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation %>
+  <br>
+  <br>
+  <%= f.submit "Create my account" %>
+
+<% end %>
+</body>

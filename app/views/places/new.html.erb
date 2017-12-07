@@ -1,0 +1,23 @@
+<%= render "layouts/header" %>
+
+<center><h1>TRAVLR.</h1>
+<body>
+  <h3>Add an adventure and your favorite memory!</h3>
+
+  <%= form_for @place, url: {action: "create"} do |f| %>
+
+  <%= f.hidden_field :trip_id %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :memory %>
+  <%= f.text_field :memory %>
+  <br>
+  <br>
+  <%= f.submit "Create" %>
+  <% end %>
+
+<%= render 'layouts/footer' %>
+</body>

@@ -1,0 +1,20 @@
+<%= render "layouts/header" %>
+
+<center><h1>TRAVLR</h1>
+<body>
+<h3>Edit your adventure!</h3>
+
+<%= form_for @place, url: {action: "update"} do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.label :memory %>
+<%= f.text_field :memory %>
+<br>
+<br>
+<%= f.submit "Change" %>
+<% end %>
+
+<%= render 'layouts/footer' %>
+</body>

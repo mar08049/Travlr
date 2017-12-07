@@ -1,0 +1,30 @@
+<%= render "layouts/header" %>
+
+<center><h1>TRAVLR.</h1>
+<body>
+    <h3>Add a trip!</h3>
+
+    <%= form_for(@trip , action: "create") do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :year %>
+    <%= f.text_field :date %>
+    <br>
+    <br>
+    <h4>While you are creating a trip, add an adventure!</h4>
+    <%= f.fields_for :places do |p| %>
+      <%= p.label :Adventure %>
+      <%= p.text_field :name %><br>
+      <br>
+      <%= p.label :memory %>
+      <%= p.text_field :memory %><br>
+      <br>
+
+    <% end %>
+    <br>
+    <%= f.submit "Create" %>
+  <% end %>
+</body>
