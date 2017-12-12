@@ -2,7 +2,7 @@
 
 <center><h1>TRAVLR.</h1>
 <body>
-    <h3>Add a trip!</h3>
+    <h2>Add a trip!</h2>
 
     <%= form_for(@trip , action: "create") do |f| %>
 
@@ -14,13 +14,14 @@
     <%= f.text_field :date %>
     <br>
     <br>
-    <h4>While you are creating a trip, add an adventure!</h4>
+    <h2>While you are creating a trip, add an adventure!</h2>
+    <p> Call it whatever you like: the name of a city, a date, or simply "Day 1".</p>
     <%= f.fields_for :places do |p| %>
       <%= p.label :Adventure %>
       <%= p.text_field :name %><br>
       <br>
       <%= p.label :memory %>
-      <%= p.text_field :memory %><br>
+      <%= p.text_field :memory, :size => 100 %><br>
       <br>
 
     <% end %>

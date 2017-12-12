@@ -1,44 +1,43 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <style>
-
-  html {color: white;
-        font-family: "Impact";
-        letter-spacing: 3px;
-        font-size: 1.2em;
-      }
-  h1 {font-size: 3em}
-  body {background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;}
-  a { color: white}
-  .login {background-color: black;
-          background: rgba(0, 0, 0, 0.7);
-          margin-top: 350px;
-          padding-top: 5px;
-          padding-bottom: 5px;
-          width: 100%;
+  <html>
+    <head>
+      <style>
+      html {color: white;
+            font-family: "Impact";
+            letter-spacing: 3px;
+            font-size: 1.2em;
           }
-   a:hover {font-size: 1.1em}
-  </style>
-</head>
-<body background= "https://edge.alluremedia.com.au/m/g/2016/01/rio-de-janeiro-sunset.jpg">
-<center><h1>TRAVLR.</h1>
-  <center><h2>Track your Adventures, Share your Story.</h2>
+      h1 {font-size: 3em}
+      body {background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;}
+      a { color: white}
+      .login {background-color: black;
+              background: rgba(0, 0, 0, 0.7);
+              margin-top: 350px;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              width: 100%;
+              }
+       a:hover {font-size: 1.1em}
+      </style>
+    </head>
+    <body background= "https://edge.alluremedia.com.au/m/g/2016/01/rio-de-janeiro-sunset.jpg">
+    <center><h1>TRAVLR.</h1>
+      <center><h2>Track your Adventures, Share your Story.</h2>
 
-<div class= "login">
+    <div class= "login">
 
- <h3><%= link_to "LOG IN", sessions_new_path %></h3>
-     <% if session[:user_id] %>
-       <h2><%= @user.username %></h2>
-       <img src="<%= @user.image %>"><br>
-       <br>
-       <%= link_to "Enter", user_path(current_user) %>
-     <% else %>
-       <%= link_to('Log in with Facebook!', '/auth/facebook') %>
-     <% end %>
-  <p>Don't have an account? <%= link_to "SIGN UP", signup_path %></p>
-</div>
-</body>
+     <h3><%= link_to "LOG IN", sessions_new_path %></h3>
+         <% if session[:user_id] %>
+           <h2><%= @user.username %></h2>
+           <img src="<%= @user.image %>"><br>
+           <br>
+           <%= link_to "Enter", user_path(current_user) %>
+         <% else %>
+           <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+         <% end %>
+      <p>Don't have an account? <%= link_to "SIGN UP", signup_path %></p>
+    </div>
+  </body>
 </html>
