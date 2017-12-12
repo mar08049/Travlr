@@ -2,8 +2,10 @@
 
 <center><h1>TRAVLR.</h1>
   <h3>Travlr's most travelled!</h3>
-   <p><%= User.number_of_trips.username %> - <%= User.number_of_trips.trips.count %> trips!</p>
+   <% User.number_of_trips.each.with_index(1) do |user, index| %>
+    <p> <%= index %>.<%= user.username.capitalize %> - <%= user.trips.count %> trips!</p>
+     <% end %>
   <br>
-  <p>Can you catch <%= User.number_of_trips.username %>? Prove it!</p>
+
 <br>
   <%= render "layouts/footer" %>

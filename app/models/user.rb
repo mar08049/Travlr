@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_secure_password validations: false
 
   def self.number_of_trips
-    self.all.sort_by {|user| user.trips.size * -1}[0]
+    self.all.sort_by {|user| user.trips.size * -1}
   end
 
   def self.find_or_create_by_omniauth(auth_hash)

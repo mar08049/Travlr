@@ -3,20 +3,19 @@
 <center><h1>TRAVLR.</h1>
 <br>
 <body>
-<h2>Welcome, <%= @user.username.capitalize %>!</h2>
-<% if flash[:success] %>
-  <p style="color: green;"><%= flash[:success] %></p>
-<% end %>
-<h3>Your <%= @user.trips.count %> trip(s):</h3>
+  <h2>Welcome, <%= @user.username.capitalize %>!</h2>
+  <% if flash[:success] %>
+    <p style="color: green;"><%= flash[:success] %></p>
+  <% end %>
+  <h3>Your <%= @user.trips.count %> trip(s):</h3>
+  <% @user.trips.each do |trip| %>
+  <h3><%=link_to trip.name, user_trip_path(@user, trip) %>-<%= trip.date %></h3>
+  <% end %>
 
-<% @user.trips.each do |trip| %>
-<h3><%=link_to trip.name, user_trip_path(@user, trip) %>-<%= trip.date %></h3>
-<% end %>
-
-<br>
-<%= link_to 'Add Trip', new_user_trip_path(@user, @trip) %><br>
-<br>
-<%= link_to "Traveler's Most Travelled", users_path(@users) %>
-<br>
-<%= render 'layouts/footer' %>
+  <br>
+  <%= link_to 'Add Trip', new_user_trip_path(@user, @trip) %><br>
+  <br>
+  <%= link_to "Traveler's Most Travelled", users_path(@users) %>
+  <br>
+  <%= render 'layouts/footer' %>
 </body>
