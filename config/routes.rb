@@ -23,6 +23,8 @@ Rails.application.routes.draw do
       resources :places
   end
 
-  resources :trips
+  resources :places do
+    resources :comments
+  end
 
 end
