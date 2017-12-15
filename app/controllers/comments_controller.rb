@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  efore_action :set_place
+  before_action :set_place
 
   def index
     @comments = @place.comments
@@ -11,3 +11,6 @@ class CommentsController < ApplicationController
     @place = Place.find(params[:place_id])
   end
 end
+
+
+# $("a[href="/places/1/comments"]").on("click"), function(e){e.preventDefault();alert("You clicked this link!!!")})

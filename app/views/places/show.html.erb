@@ -8,6 +8,7 @@
 <% end %>
 <p><%= @place.name %>- <%= @place.memory %></p>
 <br>
+<%= link_to "Load Comments", place_comments_path(@place), :class => "load_comments" %>
 <%= link_to "Edit", edit_trip_place_path(@place) %>
 <%= link_to "Delete", trip_place_path(:trip_id , @place), method: :delete %>
 <br>
