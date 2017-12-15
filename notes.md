@@ -1,19 +1,21 @@
 *Progress*
-Welcome/Application  O
-Login                O
-Signup               O
-User/:id             O
-User creates trip    O
-User/:id shows trips O
-User/:id edits trips O
-User/:id delete tripsO
-Can add places to tr O
-Can edit places      O
-Can delete places    O
-See all adventures   O
-Logout               O
+1. Must render at least one index page (index resource - 'list of things') via jQuery and an Active Model Serialization JSON Backend. For example, in a blog domain with users and posts, you might display the index of the users posts on the users show page, fetching the posts via an AJAX GET request, with the backend rendering the posts in JSON format, and then appending the posts to the page.
 
-O = completed
-*Current Problems*
-Can't create, edit or delete places.
-Cannot list ONLY "current_uses's" places.all.
+idea- List all recently created trips by "created_at"
+
+2. Must render at least one show page (show resource - 'one specific thing') via jQuery and an Active Model Serialization JSON Backend. For example, in the blog domain, you might allow a user to sift through the posts by clicking a 'Next' button on the posts show page, with the next post being fetched and rendered via JQuery/AJAX.
+
+idea- when clicking on a trip, user can click next to show next trip without rendering new page.
+
+3. The rails API must reveal at least one has-many relationship in the JSON that is then rendered to the page. For example if each of those posts has many comments, you could render those comments as well on that show page.
+
+idea- whahhh??
+
+4. Must use your Rails API and a form to create a resource and render the response without a page refresh. For example, a user might be able to add a comment to a post, and the comment would be serialized, and submitted via an AJAX POST request, with the response being the new object in JSON and then appending that new comment to the DOM using JavaScript (ES6 Template Literals can help out a lot with this).
+
+idea- when sifting through trips, add comments to other user's trip details.
+
+5. Must translate the JSON responses into Javascript Model Objects. The Model Objects must have at least one method on the prototype. Formatters work really well for this.
+Borrowing from the previous example, instead of plainly taking the JSON response of the newly created comment and appending it to the DOM, you would create a Comment prototype object and add a function to that prototype to perhaps concatenate (format) the comments authors first and last name. You would then use the object to append the comment information to the DOM.
+
+idea- whahhhh?
