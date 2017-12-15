@@ -21,8 +21,6 @@ Rails.application.routes.draw do
       resources :places
   end
 
-  resources :users do
-    resources :places, only: [:index]
-  end
+  resources :trips
 
 end

@@ -1,3 +1,7 @@
 render all recently created trips for all users.
 
 will print out trips with their users.
+
+<% @trips.each do |trip| %>
+  <%= render partial: "trip", locals: {trip: trip} %>
+  <% end %>
