@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Travlr allows you to track and update your travels in a user friendly format.
 
-Things you may want to cover:
+To install:
 
-* Ruby version
+Fork and Clone:https://github.com/mar08049/travlr
+Run "bundle install"
+Run "rails s" to get server up and running
+Enter the URL localhost:3000
+Signup with username and password or with Facebook
+Enter User Dashboard
+Add/edit/delete trips and adventures
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is licensed under the MIT License - see the LICENSE.md file for details.
