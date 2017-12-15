@@ -9,6 +9,11 @@ class TripsController < ApplicationController
     @trip.places.build
   end
 
+  def detail
+    @trip = Trip.find(params[:id])
+    render plain: @trip.places.name
+  end
+
   def create
     @trip = current_user.trips.new(trip_params)
     if @trip.save

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback', to: 'sessions#oauth'
   post '/users/:id/trips/new', to: 'trips#create'
 
+  get '/trips/:id/detail', to: 'trips#detail'
+
   resources :users do
     resources :trips
   end

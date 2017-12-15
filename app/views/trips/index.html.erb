@@ -4,4 +4,15 @@
 <% @trips.each do |trip| %>
   <%= render partial: "trip", locals: {trip: trip} %>
   <% end %>
-<!--add button to show places
+<!--add button to show places-->
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-more").on('click', function() {
+    // get the id from the data attribute
+    var id = $(this).data("id");
+    $.get("/trips/" + id + "/detail", function(data) {
+      alert(data);
+    });
+  });
+});
+</script>
