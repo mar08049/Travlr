@@ -3,9 +3,9 @@ $(function() {
     $.ajax({
       method: "GET",
       url: this.href
-    }).done(fuction(data) {
-      console.log(data)
-    });
+    }).done(fuction(response) {
+      $("div.comments").html(response)
+      });
 
     e.preventDefault();
   })
@@ -13,7 +13,7 @@ $(function() {
 //Not hijacking link. previous rendition of function did.
 
 //For requirement #5.
-
+//Create an object
 function Comment(name, description) {
   this.name = name;
   this.description= description;

@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171216134343) do
+ActiveRecord::Schema.define(version: 20171216142828) do
 
   create_table "comments", force: :cascade do |t|
     t.string "description"
     t.string "name", default: "Anonymous"
+    t.integer "place_id"
   end
 
   create_table "places", force: :cascade do |t|
