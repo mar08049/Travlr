@@ -11,3 +11,14 @@ $(function() {
   })
 })
 //Not hijacking link. previous rendition of function did.
+
+//For requirement #5.
+
+function Comment(name, description) {
+  this.name = name;
+  this.description= description;
+}
+
+Comment.prototype.makeComment = function() {
+  console.log(`${this.name}-${this.description}`);
+}
