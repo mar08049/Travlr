@@ -1,1 +1,6 @@
-Comments go here
+<ol>
+  <% @comments.each do |comment| %>
+  <li><%= comment.description %></li>
+    <p>-<%= comment.name %></p>
+  <% end %>
+</ol>
