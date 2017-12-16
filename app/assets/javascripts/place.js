@@ -10,3 +10,4 @@ $(function() {
     e.preventDefault();
   })
 })
+//Not hijacking link. previous rendition of function did.
