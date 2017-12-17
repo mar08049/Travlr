@@ -1,8 +1,12 @@
 $(function() {
   $("a.load_comments").on("click", function(e) {
-    $.get(this.href).success(function(response) {
-      $("div.comments").html(response)
-    })
+    $.ajax({
+      method: "GET",
+      url: this.href
+    }).done(fuction(data) {
+      console.log(data)
+    });
+
     e.preventDefault();
   })
 })

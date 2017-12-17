@@ -3,7 +3,7 @@
 <center><h1>TRAVLR.</h1>
 <br>
 <body>
-  <h2>Welcome, <%= @user.username.capitalize %>!</h2>
+  <h2>Welcome, <%= @user.username.titleize %>!</h2>
   <% if flash[:success] %>
     <p style="color: green;"><%= flash[:success] %></p>
   <% end %>
@@ -15,7 +15,7 @@
   <br>
   <%= link_to 'Add Trip', new_user_trip_path(@user, @trip) %><br>
   <br>
-  <%= link_to "Traveler's Most Travelled", users_path(@users) %>
+  <%= link_to "Travlr's Most Travelled", users_path(@users) %>
   <br>
   <%= render 'layouts/footer' %>
 </body>
