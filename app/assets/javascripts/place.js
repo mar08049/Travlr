@@ -3,7 +3,7 @@ $(function() {
     $.ajax({
       method: "GET",
       url: this.href
-    }).done(fuction(data) {
+    }).done(function(data) {
       console.log(data)
     });
 
