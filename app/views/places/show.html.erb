@@ -10,6 +10,7 @@
 <br>
 <%= link_to "Load Comments", place_comments_path(@place), :class => "load_comments" %><br>
 <br>
+
 <%= form_for(@comment, :url => place_comments_path(@place)) do |f| %>
   <%= f.text_area :description %>
   <p><%= f.text_area :name %></p>
@@ -19,6 +20,9 @@
 <br>
 
 <div class="comments">
+  <ul>
+
+  </ul>
 
 </div>
 
