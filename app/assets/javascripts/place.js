@@ -9,12 +9,10 @@
 $(function(){
   $("a.load_comments").on("click", function(e){
     $("a.load_comments").hide();
-    $.get(this.href).success(function(json){
+    $.getJSON(this.href).success(function(json){
       var $ul = $("div.comments ul")
       $ul.html("")
-      debugger
       json.forEach(function(comment){
-        debugger
         $ul.append("<li>" + comment.description + "</li>");
         $ul.append("<li>" + "-" + comment.name + "</li>" + "<br>" + "<br>");
       })
@@ -31,7 +29,7 @@ $(function(){
 
     data = {
       'authenticity_token': $("input[name='authenticity_token']").val(), 'comment': {
-        'description': $("#comment_description").val()
+        'description': $("#comment_description").val(), 'name': $("#comment_name").val()
       }
     };
     $.ajax({
@@ -39,6 +37,9 @@ $(function(){
       url: url,
       data: data,
       success: function(response){
+        $("#comment_description").val("");
+        $("#comment_name").val("");
+        $("Submit").attr("disabled", false)
         var $ul = $("div.comments ul")
         $ul.append(response);
       }
