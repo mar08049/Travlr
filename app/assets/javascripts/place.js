@@ -24,29 +24,18 @@ $(function(){
 //create a new comment
 $(function(){
   $("#new_comment").on("submit", function(e){
-    url = this.action
-    console.log(url)
 
-    data = {
-      'authenticity_token': $("input[name='authenticity_token']").val(), 'comment': {
-        'description': $("#comment_description").val(), 'name': $("#comment_name").val()
-      }
-    };
     $.ajax({
       type:"POST",
-      url: url,
-      data: data,
+      url: this.action,
+      data: $(this).serialize(),
       success: function(response){
         $("#comment_description").val("");
         $("#comment_name").val("");
-        $("Submit").attr("disabled", false)
         var $ul = $("div.comments ul")
         $ul.append(response);
       }
     });
-
-
-
     e.preventDefault();
   })
 });
@@ -61,6 +50,10 @@ class Comment{
 }
 
 //create a prototype
+
 Comment.prototype.makeComment = function() {
-  console.log(`${this.name}-${this.description}`);
+  let html = ''
+  html += `<p class="comments">${this.description}</p>`
+  html += `<p class="comment_by">By: ${this.name}</p>`
+  return html
 }
