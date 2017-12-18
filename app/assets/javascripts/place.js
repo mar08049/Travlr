@@ -1,16 +1,16 @@
-$(function() {
-  $("a.load_comments").on("click", function(e) {
-    $.ajax({
-      method: "GET",
-      url: this.href
-    }).done(function(data) {
-      console.log(data)
-    });
-
+$(function(){
+  $("a.load_comments").on("click", function(e){
+    $.get(this.href).success(function(json){
+      var $ol = $("div.comments ol")
+      $ol.html("")
+      json.forEach(function(comment){
+        debugger
+      })
+    })
     e.preventDefault();
   })
 })
-//Not hijacking link. previous rendition of function did.
+
 
 //For requirement #5.
 //Create an object

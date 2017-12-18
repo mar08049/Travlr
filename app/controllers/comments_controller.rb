@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @comments = @place.comments
 
     render :layout => false
+    #render :json => @comments
   end
 
   private
