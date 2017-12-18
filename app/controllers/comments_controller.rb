@@ -4,14 +4,16 @@ class CommentsController < ApplicationController
   def index
     @comments = @place.comments
 
-    #render :layout => false
-    render :json => @comments
+    respond_to do |format|
+      format.html {render 'index.html', :layout => false}
+      format.js {render 'index.js', :layout => false}
+    end
   end
 
   def create
     @comment = @place.comments.build(comments_params)
     if @comment.save
-      redirect_to @place
+      render 'comments/show', :layout => false
     else
       render "places/show"
     end

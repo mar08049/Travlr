@@ -8,11 +8,13 @@
 //load comments using json
 $(function(){
   $("a.load_comments").on("click", function(e){
-
+    $("a.load_comments").hide();
     $.get(this.href).success(function(json){
       var $ul = $("div.comments ul")
       $ul.html("")
+      debugger
       json.forEach(function(comment){
+        debugger
         $ul.append("<li>" + comment.description + "</li>");
         $ul.append("<li>" + "-" + comment.name + "</li>" + "<br>" + "<br>");
       })
@@ -24,11 +26,25 @@ $(function(){
 //create a new comment
 $(function(){
   $("#new_comment").on("submit", function(e){
-    alert("You clicked submit!!")
     url = this.action
     console.log(url)
 
-    data =
+    data = {
+      'authenticity_token': $("input[name='authenticity_token']").val(), 'comment': {
+        'description': $("#comment_description").val()
+      }
+    };
+    $.ajax({
+      type:"POST",
+      url: url,
+      data: data,
+      success: function(response){
+        var $ul = $("div.comments ul")
+        $ul.append(response);
+      }
+    });
+
+
 
     e.preventDefault();
   })
