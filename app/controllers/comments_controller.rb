@@ -8,12 +8,22 @@ class CommentsController < ApplicationController
     #render :json => @comments
   end
 
+  def create
+    @comment = @place.comments.build(comments_params)
+    if @comment.save
+      redirect_to @place
+    else
+      render "places/show"
+    end
+  end
+
   private
 
   def set_place
     @place = Place.find(params[:place_id])
   end
+
+  def comments_params
+    params.require(:comment).permit(:name, :description)
+  end
 end
-
-
-# $("a[href="/places/1/comments"]").on("click"), function(e){e.preventDefault();alert("You clicked this link!!!")})
