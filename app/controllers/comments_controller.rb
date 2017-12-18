@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
   def index
     @comments = @place.comments
 
-    render :layout => false
-    #render :json => @comments
+    #render :layout => false
+    render :json => @comments
   end
 
   def create

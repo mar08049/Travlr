@@ -1,22 +1,35 @@
 $(function(){
   $("a.load_comments").on("click", function(e){
     $.get(this.href).success(function(json){
-      var $ol = $("div.comments ol")
-      $ol.html("")
+      var $ul = $("div.comments ul")
+      $ul.html("")
+      debugger
       json.forEach(function(comment){
-        debugger
+
       })
     })
     e.preventDefault();
   })
 })
+$(function(){
+  $("#new_comment").on("submit", function(e){
+    alert("You clicked submit!!")
+    url = this.action
+    console.log(url)
 
+    data =
 
+    e.preventDefault();
+  })
+});
 //For requirement #5.
 //Create an object
-function Comment(name, description) {
-  this.name = name;
-  this.description= description;
+class Comment{
+  constructor(name, description, place_id) {
+    this.name = name;
+    this.description= description;
+    this.place_id = place_id;
+  }
 }
 
 Comment.prototype.makeComment = function() {
