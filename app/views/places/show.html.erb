@@ -14,7 +14,7 @@
 <%= form_for(@comment, :url => place_comments_path(@place)) do |f| %>
   <%= f.text_area :description %>
   <p><%= f.text_area :name %></p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit "Submit Comment", class: 'form-submit' %></p>
 <% end %>
 
 <br>
