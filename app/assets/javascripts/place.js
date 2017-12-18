@@ -15,16 +15,12 @@ Comment.prototype.makeComment = function() {
   return html
 }
 
-
-
-
 //render show page with 'next' option
 function nextPage(){
   $("a.next").on("click", function(e){
     e.preventDefault();
   })
 }
-
 
 //load comments index using json
 $(function(){
