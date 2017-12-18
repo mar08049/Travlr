@@ -46,23 +46,16 @@ $(function(){
 $(function(){
   $(".form-submit").on("click", function(e){
     e.preventDefault();
-    // debugger;
     $.ajax({
       type:"POST",
       url: e.target.form.action,
       data: $(e.target.form).serialize(),
       dataType: "JSON"
     }).success(function(response){
-
-      // Create your JS comment object here from the response object
       let comment = new Comment(response.name, response.description, response.place_id)
-      // debugger;
       $("#comment_description").val("");
       var $ul = $("div.comments ul")
-      // Here you'll want to append your comment.makeComment prototype which returns html
-      // $ul.append(response);
       $ul.append(comment.makeComment())
-
     });
   })
 });

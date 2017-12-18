@@ -13,10 +13,9 @@
   <% @trip.places.each do |place| %>
   <h3><%=link_to place.name, trip_place_path(@trip, place) %></h3>
   <% end %>
-
+  <a href="#" class="previous" data-id="<%= @trip.id %>">Previous</a>
+    <a href="#" class="next" data-id="<%= @trip.id %>">Next</a><br><br>
   <%= link_to "Add Adventure?", new_trip_place_path(@trip, @place) %>
   <br>
 <%= render 'layouts/footer' %>
 </body>
-
-<!--Update to include next button
