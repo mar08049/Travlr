@@ -25,8 +25,9 @@ Comment.prototype.makeComment = function() {
 $(function(){
   $("a.load_comments").on("click", function(e){
     $("a.load_comments").hide();
+    debugger;
     $.getJSON(this.href).success(function(json){
-      debugger
+      debugger;
       var $ul = $("div.comments ul")
       $ul.html("")
       json.forEach(function(comment){
@@ -64,8 +65,8 @@ function nextTrip(){
       $(".tripInfo").text(data[""]);
       $(".placeInfo").text(data[""]);
       $("previous_link").attr("data-attribute", data["id"])
-    })
-  }
+    });
+  });
 }
 
 function previousTrip(){
@@ -77,6 +78,6 @@ function previousTrip(){
       $(".tripInfo").text(data[""]);
       $(".placeInfo").text(data[""]);
       $("previous_link").attr("data-attribute", data["id"])
-    })
-  }
+    });
+  });
 }

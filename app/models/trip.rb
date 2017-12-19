@@ -12,7 +12,7 @@ class Trip < ActiveRecord::Base
   end
 
   def next
-    trips = trip_id_by_title
+    trips = trip_id_by_name
     trip_index = trips.find_index(id)
     next_trip = trip_index + 1
     if next_trip < trips.length
@@ -23,7 +23,7 @@ class Trip < ActiveRecord::Base
   end
 
   def previous
-    trips = trip_id_by_title
+    trips = trip_id_by_name
     trip_index = trips.find_index(id)
     next_trip = trip_index - 1
     if next_trip < trips.length
@@ -35,7 +35,7 @@ class Trip < ActiveRecord::Base
 
   private
 
-  def trip_id_by_title
+  def trip_id_by_name
     @trip_id ||= Trip.order(name: :asc).pluck(:id)
   end
 end
