@@ -16,8 +16,9 @@
   <h3 class="placeInfo"><%=link_to place.name, trip_place_path(@trip, place) %></h3>
   <% end %>
 
-  <a href="#" class="previous" data-id="<%= @trip.id %>">Previous</a>
-  <a href="#" class="next" data-id="<%= @trip.id %>">Next</a><br><br>
+  <%= link_to "Previous", trip_path(@trip.previous), :class => "previous_link", :"data-attribute" => @trip.id %>
+  <%= link_to "Next", trip_path(@trip.next), :class => "next_link", :"data-attribute" => @trip.id  %>
+<br><br>
   <%= link_to "Add Adventure?", new_trip_place_path(@trip, @place) %>
   <br>
 

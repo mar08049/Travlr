@@ -8,7 +8,7 @@ $(document).ready(function(){
 class Comment{
   constructor(name, description, place_id) {
     this.name = name;
-    this.description= description;
+    this.description = description;
     this.place_id = place_id;
   }
 }
