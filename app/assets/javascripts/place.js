@@ -1,8 +1,4 @@
-$(document).ready(function(){
-  makeComment();
-  nextTrip();
-  previousTrip();
-})
+
 
 //Create an object
 class Comment{
@@ -16,27 +12,27 @@ class Comment{
 //create a prototype
 Comment.prototype.makeComment = function() {
   let html = ''
-  html += `<p class="comments">${this.description}</p>`;
-  html += `<p class="comment_by">By: ${this.name}</p>`;
+  html += `<p class="comments">${this.description}</p>`
+  html += `<p class="comment_by">By: ${this.name}</p>`
   return html;
 };
 
 //load comments index using json
-$(function(){
-  $("a.load_comments").on("click", function(e){
-    $("a.load_comments").hide();
-    $.getJSON(this.href).success(function(json){
-      var $ul = $("div.comments ul");
-      $ul.html("");
-      json.forEach(function(comment){
-        $ul.append("<li>" + comment.description + "</li>");
-        $ul.append("<li>" + "-" + comment.name + "</li>" + "<br>" + "<br>"
-      );
-      });
-    });
-    e.preventDefault();
-  });
-});
+ $(function(){
+   $("a.load_comments").on("click", function(e){
+     $("a.load_comments").hide();
+     $.getJSON(this.href).success(function(json){
+       var $ul = $("div.comments ul");
+       $ul.html("");
+       json.forEach(function(comment){
+         $ul.append("<li>" + comment.description + "</li>");
+         $ul.append("<li>" + "-" + comment.name + "</li>" + "<br>" + "<br>"
+       );
+       });
+     });
+     e.preventDefault();
+   });
+ });
 
 //create a new comment
 $(function(){
@@ -60,23 +56,24 @@ function nextTrip(){
   $(".next_link").on("click", function(e){
     e.preventDefault();
     var nextId = parseInt($(".next_link").attr("data-attribute")) + 1;
+    console.log(nextId)
     $.get("/trips/" + nextId + ".json", function(data){
-      $(".tripInfo").text(data[""]);
-      $(".placeInfo").text(data[""]);
+      $(".tripInfo").text(data["name"]);
+      $(".placeInfo").text(data["name"]);
       $("previous_link").attr("data-attribute", data["id"]);
     });
   });
-}
+};
 
 function previousTrip(){
   $(".previous_link").on("click", function(e){
     e.preventDefault();
-    var previousId = parseIn($(".previous_link").attr("data-attribute")) - 1;
-    console.log(previousId);
+    var previousId = parseInt($(".previous_link").attr("data-attribute")) - 1;
+    console.log(previousId)
     $.get("/trips") + previousId + ".json", function(data){
-      $(".tripInfo").text(data[""]);
-      $(".placeInfo").text(data[""]);
+      $(".tripInfo").text(data["name"]);
+      $(".placeInfo").text(data["name"]);
       $("previous_link").attr("data-attribute", data["id"]);
-    });
+    };
   });
-}
+};
