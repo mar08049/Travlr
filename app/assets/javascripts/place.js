@@ -16,28 +16,27 @@ class Comment{
 //create a prototype
 Comment.prototype.makeComment = function() {
   let html = ''
-  html += `<p class="comments">${this.description}</p>`
-  html += `<p class="comment_by">By: ${this.name}</p>`
-  return html
-}
+  html += `<p class="comments">${this.description}</p>`;
+  html += `<p class="comment_by">By: ${this.name}</p>`;
+  return html;
+};
 
 //load comments index using json
 $(function(){
   $("a.load_comments").on("click", function(e){
     $("a.load_comments").hide();
-    debugger;
     $.getJSON(this.href).success(function(json){
-      debugger;
-      var $ul = $("div.comments ul")
-      $ul.html("")
+      var $ul = $("div.comments ul");
+      $ul.html("");
       json.forEach(function(comment){
         $ul.append("<li>" + comment.description + "</li>");
-        $ul.append("<li>" + "-" + comment.name + "</li>" + "<br>" + "<br>");
-      })
-    })
+        $ul.append("<li>" + "-" + comment.name + "</li>" + "<br>" + "<br>"
+      );
+      });
+    });
     e.preventDefault();
-  })
-})
+  });
+});
 
 //create a new comment
 $(function(){
@@ -49,22 +48,22 @@ $(function(){
       data: $(e.target.form).serialize(),
       dataType: "JSON"
     }).success(function(response){
-      let comment = new Comment(response.name, response.description, response.place_id)
+      let comment = new Comment(response.name, response.description, response.place_id);
       $("#comment_description").val("");
-      var $ul = $("div.comments ul")
-      $ul.append(comment.makeComment())
+      var $ul = $("div.comments ul");
+      $ul.append(comment.makeComment());
     });
-  })
+  });
 });
 
 function nextTrip(){
-  $(".next_link").on("click"), function(e){
+  $(".next_link").on("click", function(e){
     e.preventDefault();
     var nextId = parseInt($(".next_link").attr("data-attribute")) + 1;
     $.get("/trips/" + nextId + ".json", function(data){
       $(".tripInfo").text(data[""]);
       $(".placeInfo").text(data[""]);
-      $("previous_link").attr("data-attribute", data["id"])
+      $("previous_link").attr("data-attribute", data["id"]);
     });
   });
 }
@@ -73,11 +72,11 @@ function previousTrip(){
   $(".previous_link").on("click", function(e){
     e.preventDefault();
     var previousId = parseIn($(".previous_link").attr("data-attribute")) - 1;
-    console.log(previousId)
+    console.log(previousId);
     $.get("/trips") + previousId + ".json", function(data){
       $(".tripInfo").text(data[""]);
       $(".placeInfo").text(data[""]);
-      $("previous_link").attr("data-attribute", data["id"])
+      $("previous_link").attr("data-attribute", data["id"]);
     });
   });
 }
