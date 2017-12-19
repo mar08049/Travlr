@@ -1,3 +1,9 @@
+$(document).ready(function(){
+  makeComment();
+  nextTrip();
+  previousTrip();
+})
+
 //Create an object
 class Comment{
   constructor(name, description, place_id) {
@@ -6,20 +12,13 @@ class Comment{
     this.place_id = place_id;
   }
 }
-//create a prototype
 
+//create a prototype
 Comment.prototype.makeComment = function() {
   let html = ''
   html += `<p class="comments">${this.description}</p>`
   html += `<p class="comment_by">By: ${this.name}</p>`
   return html
-}
-
-//render show page with 'next' option
-function nextPage(){
-  $("a.next").on("click", function(e){
-    e.preventDefault();
-  })
 }
 
 //load comments index using json
@@ -57,16 +56,26 @@ $(function(){
 });
 
 function nextTrip(){
-  //for next button
   $(".next_link").on("click"), function(e){
     e.preventDefault();
     var nextId = parseInt($(".next_link").attr("data-attribute")) + 1;
     $.get("/trips/" + nextId + ".json", function(data){
-      $(".trip")
-    })
-  }
+      $(".tripInfo").text(data[""]);
+      $(".placeInfo").text(data[""]);
+      $("previous_link").attr("data-attribute", data["id"]);
+    });
+  });
 }
 
 function previousTrip(){
-  //for last button
+  $(".previous_link").on("click", function(e){
+    e.preventDefault();
+    var previousId = parseIn($(".previous_link").attr("data-attribute")) - 1;
+    console.log(previousId)
+    $.get("/trips") + previousId + ".json", function(data){
+      $(".tripInfo").text(data[""]);
+      $(".placeInfo").text(data[""]);
+      $("previous_link").attr("data-attribute", data["id"]);
+    });
+  });
 }

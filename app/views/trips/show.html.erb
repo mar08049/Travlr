@@ -6,20 +6,20 @@
     <p style="color: green;"><%= flash[:success] %></p>
   <% end %>
 
-  <h2><%= @trip.name %>- <%= @trip.date %></h2>
+  <h2 class="tripInfo"><%= @trip.name %>- <%= @trip.date %></h2>
   <%= link_to "Edit", edit_user_trip_path(@trip) %>
   <%= link_to "Delete", user_trip_path(current_user, @trip), method: :delete %><br>
   <h3>There were <%= @trip.places.count %> adventure(s) on this trip!</h3>
   <br>
 
   <% @trip.places.each do |place| %>
-  <h3><%=link_to place.name, trip_place_path(@trip, place) %></h3>
+  <h3 class="placeInfo"><%=link_to place.name, trip_place_path(@trip, place) %></h3>
   <% end %>
 
   <a href="#" class="previous" data-id="<%= @trip.id %>">Previous</a>
   <a href="#" class="next" data-id="<%= @trip.id %>">Next</a><br><br>
   <%= link_to "Add Adventure?", new_trip_place_path(@trip, @place) %>
   <br>
-  
+
   <%= render 'layouts/footer' %>
 </body>
