@@ -26,6 +26,7 @@ $(function(){
   $("a.load_comments").on("click", function(e){
     $("a.load_comments").hide();
     $.getJSON(this.href).success(function(json){
+      debugger
       var $ul = $("div.comments ul")
       $ul.html("")
       json.forEach(function(comment){
@@ -62,9 +63,9 @@ function nextTrip(){
     $.get("/trips/" + nextId + ".json", function(data){
       $(".tripInfo").text(data[""]);
       $(".placeInfo").text(data[""]);
-      $("previous_link").attr("data-attribute", data["id"]);
-    });
-  });
+      $("previous_link").attr("data-attribute", data["id"])
+    })
+  }
 }
 
 function previousTrip(){
@@ -75,7 +76,7 @@ function previousTrip(){
     $.get("/trips") + previousId + ".json", function(data){
       $(".tripInfo").text(data[""]);
       $(".placeInfo").text(data[""]);
-      $("previous_link").attr("data-attribute", data["id"]);
-    });
-  });
+      $("previous_link").attr("data-attribute", data["id"])
+    })
+  }
 }
