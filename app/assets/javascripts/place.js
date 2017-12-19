@@ -55,3 +55,18 @@ $(function(){
     });
   })
 });
+
+function nextTrip(){
+  //for next button
+  $(".next_link").on("click"), function(e){
+    e.preventDefault();
+    var nextId = parseInt($(".next_link").attr("data-attribute")) + 1;
+    $.get("/trips/" + nextId + ".json", function(data){
+      $(".trip")
+    })
+  }
+}
+
+function previousTrip(){
+  //for last button
+}
