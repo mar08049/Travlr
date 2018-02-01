@@ -78,6 +78,7 @@ function previousTrip(){
       $(".tripInfo").text(data["name"]);
       $(".placeInfo").text(data["name"]);
       $(".previous_link").attr("data-attribute", data["id"]);
+      $(".next_link").attr("data-attribute", data["id"] + 1);
     };
   });
 };
