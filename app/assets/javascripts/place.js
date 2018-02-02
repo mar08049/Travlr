@@ -74,11 +74,11 @@ function previousTrip(){
     e.preventDefault();
     var previousId = parseInt($(".previous_link").attr("data-attribute")) - 1;
     console.log(previousId)
-    $.get("/trips") + previousId + ".json", function(data){
+    $.get("/trips/" + previousId + ".json", function(data){
       $(".tripInfo").text(data["name"]);
       $(".placeInfo").text(data["name"]);
       $(".previous_link").attr("data-attribute", data["id"]);
       $(".next_link").attr("data-attribute", data["id"] + 1);
-    };
+    });
   });
 };

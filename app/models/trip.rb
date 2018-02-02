@@ -26,9 +26,9 @@ class Trip < ActiveRecord::Base
     def previous
       trips = trip_id_by_name
       trip_index = trips.find_index(id)
-      next_trip = trip_index - 1
-      if next_trip < trips.length
-        trips[next_trip]
+      previous_trip = trip_index - 1
+      if previous_trip < trips.length
+        trips[previous_trip]
       else
         id
       end
