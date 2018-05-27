@@ -3,7 +3,7 @@
 <center><h1>TRAVLR.</h1>
 <body>
   <% if flash[:success] %>
-    <p style="color: green;"><%= flash[:success] %></p>
+    <p style="color: yellow;"><%= flash[:success] %></p>
   <% end %>
 
   <h2 class="tripInfo"><%= @trip.name %>- <%= @trip.date %></h2>
@@ -21,7 +21,7 @@
 
   <br><br>
 
-  <%= link_to "Add Adventure?", new_trip_place_path(@trip, @place) %>
+  <%= link_to "Add Adventure", new_trip_place_path(@trip, @place) %>
   <br>
 
   <%= render 'layouts/footer' %>
